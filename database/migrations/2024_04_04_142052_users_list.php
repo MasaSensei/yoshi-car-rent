@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phone_number');
-            $table->string('driver_license');
+            $table->string('driver_license')->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +26,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('users_list', function (Blueprint $table) {
+            $table->dropForeign(['id_car']);
+        });
         Schema::dropIfExists('users_list');
     }
 };
