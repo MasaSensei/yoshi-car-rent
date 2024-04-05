@@ -13,17 +13,14 @@ return new class extends Migration
     {
         Schema::create('car_lists', function (Blueprint $table) {
             $table->id('id_car');
-            $table->unsignedBigInteger('id_user')->nullable();
-            $table->unsignedBigInteger('id_model');
+            $table->unsignedBigInteger('id_brand');
+            $table->string('image');
+            $table->string('model');
             $table->string('number_plate');
             $table->integer('price');
             $table->enum('status', ['available', 'rented'])->default('available');
-            $table->dateTime('rental_start')->nullable();
-            $table->dateTime('rental_end')->nullable();
             $table->timestamps();
-
-            $table->foreign('id_model')->references('id_model')->on('models');
-            $table->foreign('id_user')->references('id_user')->on('users_list');
+            $table->foreign('id_brand')->references('id_brand')->on('brands');
         });
     }
 

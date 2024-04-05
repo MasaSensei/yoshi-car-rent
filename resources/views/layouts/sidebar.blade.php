@@ -23,6 +23,11 @@
                             Cars
                         </span>
                     </a>
+                    <a title="Models" class="group flex w-full items-center gap-2.5 rounded-md px-3 py-2.5 text-sm text-gray-700 text-start focus:text-accent hover:bg-red-600 {{request()->is('admin/cars/models') ? 'text-lime-500 bg-red-600' : 'text-white'}} transition duration-200 ease-in" href="/admin/cars/models">
+                        <span class="transition text-white group-focus:text-red-600">
+                            Models
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>

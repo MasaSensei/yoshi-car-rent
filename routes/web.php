@@ -11,6 +11,9 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.dasboard');
 Route::get('/admin/cars', [CarController::class, 'index'])->name('admin.cars');
 
+Route::get('/admin/cars/models', [CarController::class, 'cars_model'])->name('admin.cars.models');
+Route::get('/admin/cars/models/create', [CarController::class, 'cars_model_create'])->name('admin.cars.models.create');
+
 Route::get('/admin/cars/create', [CarController::class, 'create'])->name('admin.cars.create');
 
 Route::get('/', function () {
